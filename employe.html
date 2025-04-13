@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employe</title>
+    <link rel="stylesheet" href="/static/employe_style.css">
+</head>
+<body>
+    <div class="container">    
+        <form action="/employe" method="POST">
+            <div>
+                <label for="idnumber" class="form-label" >Employee ID</label>
+                <input type="text" name="idnumber" class="form-control" id="idnumber">
+              </div>
+            <div>
+              <label for="Name" class="form-label" >Employee Name</label>
+              <input type="text" name="Name" class="form-control" id="Name">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

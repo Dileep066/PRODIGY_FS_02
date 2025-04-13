@@ -1,0 +1,15 @@
+img{
+    height: 500px;
+    width:500px;
+    border-radius: 4px;
+
+}
+.where{
+    margin-top: 100px;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+}

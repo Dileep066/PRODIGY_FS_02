@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin </title>
+    <link rel="stylesheet" href="/static/admin_style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>
+            Employee Details
+        </h1>
+    </div>
+    <h1>
+        Add Employee Details
+    </h1>
+    <div class="container">    
+        <form action="/admin" method="POST">
+            <div>
+                <label for="idnumber" class="form-label" >Employee ID</label>
+                <input type="text" name="idnumber" class="form-control" id="idnumber">
+              </div>
+            <div>
+              <label for="Name" class="form-label" >Employee Name</label>
+              <input type="text" name="Name" class="form-control" id="Name">
+            </div>
+            <div>
+                <label for="Role" class="form-label" >Employee Role</label>
+                <input type="text" name="Role" class="form-control" id="Role">
+            </div>
+            <div>
+                <label for="salary" class="form-label" >Employee Salary</label>
+                <input type="text" name="salary" class="form-control" id="salary">
+              </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <h1>
+        Employee Details
+    </h1>
+    <div class="container">
+        <table border="2" cellpading="3" >
+            <thead>
+                <tr>
+                <th scope="col">S No</th>
+                <th scope="col">Emp ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Role</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Date of Join</th>
+                <th scope="col">Actions</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for employe in allemployee %}
+                <tr>
+                    <th scope="row">{{ loop.index}}</th>
+                    <td>{{ employe.idnumber}}</td>
+                    <td>{{ employe.name}}</td>
+                    <td>{{ employe.role}}</td>
+                    <td>{{ employe.salary}}</td>
+                    <td>{{ employe.date_created.strftime('%Y-%m-%d')}}</td>
+                    <td>
+                        <a href="/update/{{employe.idnumber}}"><button type="button" class="btn btn-outline-danger mx-1">Update</button></a>
+                        <a href="/delete/{{employe.idnumber}}"><button type="button" class="btn btn-outline-danger mx-1">Delete</button></a>   
+                    </td>
+                    
+                </tr>  
+                {% endfor %}
+                
+            </tbody>
+    </table>    
+    </div>
+</body>
+</html>
